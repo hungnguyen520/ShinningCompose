@@ -22,3 +22,4 @@ services:
 
 # docker-compose exec -T mongo sh -c 'mongodump --archive' > ~/docker_backup/mongo/db.dump
 # docker-compose exec -T mongo sh -c 'mongorestore --archive' < ~/docker_backup/mongo/db.dump
+# netstat -tulpn | grep LISTEN
