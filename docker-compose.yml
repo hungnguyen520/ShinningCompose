@@ -22,14 +22,14 @@ services:
       # - MYSQL_PASSWORD=An0thrS3crt
       # - MYSQL_USER=citizix_user
       - MYSQL_DATABASE=shinning_db
-  shinningserver: 
-    image: hungnguyen520/shinningserver:latest
-    container_name: shinningserver
-    environment:
-      MONGO_CONN_STR: mongodb://207.148.65.86:27017/
-    restart: always
-    ports:
-      - "9000:9900"
+  # shinningserver: 
+  #   image: hungnguyen520/shinningserver:latest
+  #   container_name: shinningserver
+  #   environment:
+  #     MONGO_CONN_STR: mongodb://207.148.65.86:27017/
+  #   restart: always
+  #   ports:
+  #     - "9000:9900"
 
 
 # docker-compose exec -T mongo sh -c 'mongodump --archive' > ~/docker_backup/mongo/db.dump
