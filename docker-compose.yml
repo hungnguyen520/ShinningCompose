@@ -1,16 +1,27 @@
 version: "3.9"
 services:
-  mongo:
-    image: mongo:5.0
-    container_name: mongodb
-    environment:
-      - MONGO_INITDB_ROOT_USERNAME=root
-      - MONGO_INITDB_ROOT_PASSWORD=12345678x@X
-    # volumes:
-    #   - ~/docker_backup/mongo:/data/db # /host_path:/container_path OORR volume_name:/container_path
-    restart: always
+  # mongo:
+  #   image: mongo:5.0
+  #   container_name: mongodb
+  #   environment:
+  #     - MONGO_INITDB_ROOT_USERNAME=root
+  #     - MONGO_INITDB_ROOT_PASSWORD=12345678x@X
+  #   # volumes:
+  #   #   - ~/docker_backup/mongo:/data/db # /host_path:/container_path OORR volume_name:/container_path
+  #   restart: always
+  #   ports:
+  #     - "27000:27017"
+  mysql:
+    image: mysql:latest
     ports:
-      - "27000:27017"
+      - 3306:3306
+    volumes:
+      - ~/docker_backup/mysql:/var/lib/mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=12345678x@X
+      # - MYSQL_PASSWORD=An0thrS3crt
+      # - MYSQL_USER=citizix_user
+      - MYSQL_DATABASE=shinning_db
   shinningserver: 
     image: hungnguyen520/shinningserver:latest
     container_name: shinningserver
